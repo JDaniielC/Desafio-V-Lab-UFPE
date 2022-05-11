@@ -1,0 +1,14 @@
+<header>
+  <h1 id="page-title">Resultados da busca</h1>
+</header>
+
+<body padding>
+  <app-search-form></app-search-form>
+  <mat-toolbar> Escolas encontradas </mat-toolbar>
+  <div class="Cards">
+    <app-empty-list *ngIf="schools.length == 0" [busca]="true"></app-empty-list>
+    <mat-card *ngFor="let item of schools" (click)="goToDetailPage(item.id)">
+      <app-school-item [item]="item" [cod]="true" [h1]="true"></app-school-item>
+    </mat-card>
+  </div>
+</body>

@@ -1,0 +1,24 @@
+<header>
+  <h1 id="page-title">
+    Selecione uma escola
+    <mat-icon>info</mat-icon>
+  </h1>
+</header>
+
+<body padding>
+  <app-search-form></app-search-form>
+  <mat-toolbar>Escolas favoritas</mat-toolbar>
+  <div class="Cards">
+    <app-empty-list
+      *ngIf="favoriteSchools.length == 0"
+      [favoritos]="true"
+    ></app-empty-list>
+
+    <mat-card
+      *ngFor="let item of favoriteSchools"
+      (click)="goToDetailPage(item.id)"
+    >
+      <app-school-item [item]="item" [h2]="true"></app-school-item>
+    </mat-card>
+  </div>
+</body>

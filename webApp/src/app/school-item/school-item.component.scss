@@ -1,0 +1,22 @@
+.grid-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  mat-icon {
+    position: absolute;
+    right: 0.5em;
+    color: red;
+    font-size: 3.8em;
+    top: 0.8em;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+  }
+}
+
+mat-card-subtitle {
+  font-size: x-large;
+}

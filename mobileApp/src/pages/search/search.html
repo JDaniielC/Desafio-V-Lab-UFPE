@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title id="page-title">Resultados da busca</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div class="search-input">
+      <ion-icon name="search"></ion-icon>
+      <ion-input
+        (keyup)="searchBounce()"
+        formControlName="request"
+        type="search"
+        placeholder="Digite nome da escola ou cód. Ine"
+      ></ion-input>
+    </div>
+    <button ion-button round type="submit">Buscar</button>
+  </form>
+
+  <ion-label class="header-title">Escolas encontradas</ion-label>
+  <empty-list *ngIf="schools.length == 0" [busca]="true"></empty-list>
+
+  <ion-item *ngFor="let item of schools" (click)="goToDetailPage(item.id)">
+    <school-item [item]="item" [cod]="true" h1="true"></school-item>
+  </ion-item>
+</ion-content>

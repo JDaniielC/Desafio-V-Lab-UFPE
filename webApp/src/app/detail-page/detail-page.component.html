@@ -1,0 +1,33 @@
+<header>
+  <h1 id="page-title">
+    Informações da escola
+    <mat-icon>send</mat-icon>
+  </h1>
+</header>
+
+<mat-card>
+  <button (click)="unfavorite()" *ngIf="schoolData?.favorite">
+    <mat-icon color="danger">favorite</mat-icon>
+  </button>
+  <button (click)="favorite()" *ngIf="!schoolData?.favorite">
+    <mat-icon color="danger">favorite_border</mat-icon>
+  </button>
+  <mat-card-title>
+    <h1>{{ schoolData.noEntidade }}</h1>
+    <mat-card-subtitle>Região: {{ schoolData.localizacao }}</mat-card-subtitle>
+  </mat-card-title>
+  <mat-card-content>
+    <mat-grid-list cols="2">
+      <mat-grid-tile>
+        {{ schoolData.noMunicipio }} -
+        {{ schoolData.sgUf }}
+      </mat-grid-tile>
+      <mat-grid-tile>Censo: {{ schoolData.nuAnoCenso }}</mat-grid-tile>
+    </mat-grid-list>
+    <mat-card-title> Nota IDEB </mat-card-title>
+    <div class="infoIDEB">
+      <h2>Não foi possível localizar essa informação</h2>
+      Não encontramos no banco de dados
+    </div>
+  </mat-card-content>
+</mat-card>

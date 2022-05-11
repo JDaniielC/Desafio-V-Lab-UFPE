@@ -1,0 +1,14 @@
+<mat-card-title class="grid-name">
+  <h1 *ngIf="h1">{{ item.noEntidade }}</h1>
+  <h2 *ngIf="h2">{{ item.noEntidade }}</h2>
+  <button (click)="unfavorite(item.id)" *ngIf="item.favorite">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button (click)="favorite(item.id)" *ngIf="!item.favorite">
+    <mat-icon>favorite_border</mat-icon>
+  </button>
+</mat-card-title>
+<mat-card-subtitle>
+  <p>{{ item.noMunicipio }} - {{ item.sgUf }}</p>
+  <p *ngIf="cod">Cód.Inep: {{ item.coEntidade }}</p>
+</mat-card-subtitle>

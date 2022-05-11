@@ -1,0 +1,12 @@
+<div class="grid-name">
+  <h1 *ngIf="h1">{{item.noEntidade}}</h1>
+  <h2 *ngIf="h2">{{item.noEntidade}}</h2>
+  <button (click)="unfavorite(item.id)" *ngIf="item.favorite">
+    <ion-icon name="heart" color="danger"></ion-icon>
+  </button>
+  <button (click)="favorite(item.id)" *ngIf="!item.favorite">
+    <ion-icon name="heart-outline" color="danger"></ion-icon>
+  </button>
+</div>
+<p>{{item.noMunicipio}} - {{item.sgUf}}</p>
+<p *ngIf="cod">Cód.Inep: {{item.coEntidade}}</p>

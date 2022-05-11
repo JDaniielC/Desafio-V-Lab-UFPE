@@ -1,0 +1,28 @@
+#page-title {
+  padding: 0.5em;
+  background-color: #fafafafa;
+  text-align: center;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+    0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  app-search-form {
+    width: 100%;
+  }
+
+  .Cards {
+    width: 100%;
+    mat-card {
+      margin: 1em auto;
+      min-width: 27em;
+      max-width: 50em;
+      padding: 1em;
+      background-color: #fafafafa;
+    }
+  }
+}

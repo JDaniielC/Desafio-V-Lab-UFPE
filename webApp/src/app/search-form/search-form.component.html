@@ -1,0 +1,13 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+  <div class="search-input">
+    <mat-icon>search</mat-icon>
+    <input
+      matInput
+      (keyup)="searchBounce()"
+      formControlName="request"
+      type="search"
+      placeholder="Digite nome da escola ou cód. Ine"
+    />
+  </div>
+  <button mat-raised-button color="primary" type="submit">Buscar</button>
+</form>

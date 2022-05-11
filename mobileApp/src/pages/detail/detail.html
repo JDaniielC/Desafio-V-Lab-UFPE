@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title id="page-title">
+      Informações da escola
+      <ion-icon name="send"></ion-icon>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="card-background-page">
+  <ion-card>
+    <img src="../../assets/imgs/background.png" alt="Fundo" />
+    <button (click)="unfavorite()" *ngIf="schoolData?.favorite">
+      <ion-icon name="heart" color="danger"></ion-icon>
+    </button>
+    <button (click)="favorite()" *ngIf="!schoolData?.favorite">
+      <ion-icon name="heart-outline" color="danger"></ion-icon>
+    </button>
+    <div class="card-title">
+      <h1>{{schoolData?.noEntidade}}</h1>
+    </div>
+    <div class="card-subtitle">
+      <ion-grid>
+        <ion-row>
+          <ion-col>{{schoolData?.noMunicipio}} - {{schoolData?.sgUf}}</ion-col>
+          <ion-col>Atualizado: {{schoolData?.nuAnoCenso}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col> Região: {{schoolData?.localizacao}} </ion-col>
+          <ion-col></ion-col>
+        </ion-row>
+      </ion-grid>
+      <h1>Nota IDEB</h1>
+      <div class="infoIDEB">
+        <h2>Não foi possível localizar essa informação</h2>
+        Não encontramos no banco de dados
+      </div>
+    </div>
+  </ion-card>
+</ion-content>

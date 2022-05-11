@@ -1,0 +1,55 @@
+detail-page-component {
+  width: 100%;
+}
+
+mat-card {
+  margin: auto;
+  max-width: 60em;
+  height: calc(100% - 200px);
+  min-height: 500px;
+  background-image: url(../../assets/background.png);
+  button {
+    color: red;
+    background-color: transparent;
+    border: none;
+  }
+  mat-card-subtitle {
+    position: fixed;
+    left: 15em;
+    top: 10em;
+  }
+  mat-icon {
+    position: fixed;
+    font-size: xx-large;
+  }
+  mat-card-title {
+    text-align: center;
+  }
+  mat-card-content {
+    font-size: 1.5em;
+  }
+
+  .infoIDEB {
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    padding: 1em;
+    background-color: rgb(184, 222, 246);
+    border-radius: 1em;
+  }
+}
+
+#page-title {
+  align-items: center;
+  padding: 0.5em;
+  background-color: #fafafafa;
+  text-align: center;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+    0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  mat-icon {
+    position: fixed;
+    right: 1em;
+    font-size: xx-large;
+    color: #3f51b5;
+  }
+}

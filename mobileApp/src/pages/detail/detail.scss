@@ -1,0 +1,45 @@
+page-detail {
+  .infoIDEB {
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    padding: 1em;
+    background-color: rgb(184, 222, 246);
+    border-radius: 1em;
+  }
+  .card-background-page {
+    img {
+      opacity: 0.8;
+    }
+    ion-card {
+      position: relative;
+      text-align: center;
+    }
+    h1 {
+      font-weight: bold;
+    }
+
+    .card-title {
+      position: absolute;
+      top: 10%;
+      width: 100%;
+    }
+
+    .card-subtitle {
+      position: absolute;
+      top: 25%;
+      width: 100%;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .card-cod {
+      position: absolute;
+      top: 5%;
+    }
+  }
+  button {
+    background-color: transparent;
+    font-size: xx-large;
+  }
+}

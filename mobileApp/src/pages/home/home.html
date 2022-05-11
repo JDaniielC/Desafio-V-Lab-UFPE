@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title id="page-title">
+      Selecione uma escola
+      <ion-icon name="information-circle"></ion-icon>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div class="search-input">
+      <ion-icon name="search"></ion-icon>
+      <ion-input
+        (keyup)="searchBounce()"
+        formControlName="request"
+        type="search"
+        placeholder="Digite nome da escola ou cód. Ine"
+      ></ion-input>
+    </div>
+    <button ion-button round type="submit">Buscar</button>
+  </form>
+
+  <ion-label class="header-title">Escolas favoritas</ion-label>
+  <empty-list
+    *ngIf="favoriteSchools.length == 0"
+    [favoritos]="true"
+  ></empty-list>
+  <ion-item
+    *ngFor="let item of favoriteSchools"
+    (click)="goToDetailPage(item.id)"
+  >
+    <school-item [item]="item" [h2]="true"></school-item>
+  </ion-item>
+</ion-content>

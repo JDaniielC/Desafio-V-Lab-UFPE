@@ -1,0 +1,16 @@
+school-item {
+  .grid-name {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+    ion-icon {
+      position: absolute;
+      right: 0.5em;
+      font-size: 1.8em;
+    }
+    button {
+      background-color: transparent;
+    }
+  }
+}
