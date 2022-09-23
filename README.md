@@ -6,7 +6,7 @@
 
 ## Motivação
 
-Este projeto é parte de um modelo de avaliação e recrutamento de desenvolvimento mobile para o V-Lab, no qual, fui desafiado a reprodzir um aplicativo em Ionic Cordova e Angular consumindo a Api REST de uma lista de escolas.
+Este projeto é parte de um modelo de avaliação e recrutamento de desenvolvimento mobile para o V-Lab, no qual, fui desafiado a desenvolver um aplicativo em Ionic Cordova e Angular consumindo a Api REST de uma lista de escolas.
 
 ### O aplicativo Click Escola:
 
