@@ -61,7 +61,8 @@ export class HomeState {
     this.schoolList.value[idFavoriteSchool].favorite = false;
     const favorites = this.favoriteSchools
       .getValue()
-      .filter((el) => el.id == idFavoriteSchool);
+      .filter((el) => el.id != idFavoriteSchool);
     this.favoriteSchools.next(favorites);
+    console.log(this.favoriteSchools.value);
   }
 }
