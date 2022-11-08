@@ -1,7 +1,7 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SchoolsService } from 'src/services/schools.service';
+import { HomeFacade } from 'src/app/home/home.facade';
 
 @Component({
   selector: 'app-search-form',
@@ -16,7 +16,7 @@ export class SearchFormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private schoolService: SchoolsService,
+    private homeFacade: HomeFacade,
     private router: Router
   ) {}
 
@@ -36,7 +36,7 @@ export class SearchFormComponent implements OnInit {
   }
 
   public onSubmit() {
-    this.schoolService.checkoutForm = this.checkoutForm;
+    this.homeFacade.checkoutForm = this.checkoutForm;
     if (this.router.url !== '/search') this.goToSearchPage();
   }
 }

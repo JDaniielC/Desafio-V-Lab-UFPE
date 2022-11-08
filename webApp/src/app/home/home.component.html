@@ -16,7 +16,7 @@
 
     <mat-card
       *ngFor="let item of favoriteSchools"
-      (click)="goToDetailPage(item.id)"
+      (click)="goToDetailPage(item)"
     >
       <app-school-item [item]="item" [h2]="true"></app-school-item>
     </mat-card>

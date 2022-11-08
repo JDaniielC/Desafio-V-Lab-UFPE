@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SchoolsService } from 'src/services/schools.service';
-import { School } from 'src/types/School';
+import { HomeFacade } from 'src/app/home/home.facade';
+import { School } from 'src/app/shared/types/School';
 
 @Component({
   selector: 'app-detail-page',
@@ -23,22 +23,20 @@ export class DetailPageComponent implements OnInit {
     noMunicipio: '',
   };
 
-  constructor(public schoolService: SchoolsService) {
-    schoolService.getCurrentSchool().subscribe((newData) => {
-      this.schoolData = newData;
+  constructor(public homeFacade: HomeFacade) {
+    homeFacade.getCurrentSchool().subscribe((newData) => {
+      this.schoolData = newData ?? this.schoolData;
     });
   }
 
   public favorite() {
-    const id = this.schoolData.id;
-    this.schoolService.setFavoriteSchool(this.schoolData);
+    this.homeFacade.setFavoriteSchool(this.schoolData);
     this.schoolData.favorite = true;
-    this.schoolService.data[id].favorite = true;
   }
 
   public unfavorite() {
     const id = this.schoolData.id;
-    this.schoolService.deleteFavoriteSchool(id);
+    this.homeFacade.removeFavoriteSchool(id);
     this.schoolData.favorite = false;
   }
 
