@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { HomeFacade } from 'src/app/home/home.facade';
 import { School } from 'src/app/shared/types/School';
 
@@ -7,7 +8,7 @@ import { School } from 'src/app/shared/types/School';
   templateUrl: './detail-page.component.html',
   styleUrls: ['./detail-page.component.scss'],
 })
-export class DetailPageComponent implements OnInit {
+export class DetailPageComponent implements OnInit, OnDestroy {
   public schoolData: School = {
     id: 0,
     favorite: false,
@@ -23,8 +24,14 @@ export class DetailPageComponent implements OnInit {
     noMunicipio: '',
   };
 
+  private schoolSub: Subscription;
+
+  ngOnDestroy(): void {
+    this.schoolSub.unsubscribe();
+  }
+
   constructor(public homeFacade: HomeFacade) {
-    homeFacade.getCurrentSchool().subscribe((newData) => {
+    this.schoolSub = homeFacade.getCurrentSchool().subscribe((newData) => {
       this.schoolData = newData ?? this.schoolData;
     });
   }
