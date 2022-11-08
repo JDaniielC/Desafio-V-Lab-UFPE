@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 import { School } from 'src/app/shared/types/School';
@@ -17,7 +17,7 @@ export class HomeFacade {
   });
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private readonly api: HomeApi,
     private readonly state: HomeState
   ) {}

@@ -5,12 +5,12 @@ import { CommonModule } from '@angular/common';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 
 // Modules
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UntypedFormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './modules/material/material.module';
 
 @NgModule({
-  providers: [FormBuilder, HttpClient],
+  providers: [UntypedFormBuilder, HttpClient],
   declarations: [SearchFormComponent],
   imports: [CommonModule, MaterialModule, ReactiveFormsModule],
   exports: [

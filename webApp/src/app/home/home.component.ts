@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { HomeFacade } from 'src/app/home/home.facade';
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
     private homeFacade: HomeFacade,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router
   ) {
     homeFacade.setSchools();

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HomeFacade } from 'src/app/home/home.facade';
 
@@ -15,7 +15,7 @@ export class SearchFormComponent implements OnInit {
   timeout: any;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private homeFacade: HomeFacade,
     private router: Router
   ) {}

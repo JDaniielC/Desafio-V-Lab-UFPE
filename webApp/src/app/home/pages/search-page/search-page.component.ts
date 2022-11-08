@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HomeFacade } from 'src/app/home/home.facade';
 import { School } from 'src/app/shared/types/School';
@@ -17,7 +17,7 @@ export class SearchPageComponent implements OnInit {
 
   constructor(
     private homeFacade: HomeFacade,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router
   ) {
     this.schools = homeFacade.getSchoolList();
