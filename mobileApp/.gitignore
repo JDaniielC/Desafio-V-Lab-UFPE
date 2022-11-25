@@ -29,3 +29,8 @@ npm-debug.log*
 /platforms
 /plugins
 /www
+/android
+/ios
+
+/resources
+package-lock.json
